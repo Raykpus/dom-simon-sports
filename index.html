@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dom Simon Sports Store | Premium Sports Gear &amp; Apparel</title>
+<meta name="description" content="Premium athletic apparel, performance footwear, fitness gear and team sports equipment from Dom Simon Sports Store.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stylees.css">
+</head>
+<body>
+ 
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#home" class="brand" aria-label="Dom Simon Sports Store home">
+      <span class="brand-mark" aria-hidden="true"><span>DS</span></span>
+      Dom Simon Sports Store
+    </a>
+ 
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+ 
+    <div class="header-tools">
+      <button class="icon-btn menu-toggle" id="searchToggle" type="button" aria-label="Toggle search" aria-expanded="false" aria-controls="searchForm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <form class="search-form" id="searchForm" role="search" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search gear" aria-label="Search products" role="combobox" aria-expanded="false" aria-controls="searchSuggestions" aria-autocomplete="list">
+        <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions" hidden></div>
+      </form>
+      <button class="icon-btn" id="cartButton" type="button" aria-haspopup="dialog" aria-label="Shopping cart, 0 items">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg>
+        <span class="cart-badge" id="cartCount" aria-live="polite">0</span>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+ 
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <h1>Elevate your game with Dom Simon Sports</h1>
+        <p class="hero-sub">Premium performance gear, athletic apparel and accessories, built for training days, game days and every day in between.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn btn-primary">Shop Collection</a>
+          <a href="#categories" class="btn btn-ghost">Explore Categories</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="slab"></div>
+        <div class="num">26</div>
+        <div class="tag tag-b">New season drop<small>Apparel &amp; footwear</small></div>
+        <div class="tag tag-a">Nation Wide Delivery<small>On every order</small></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <h2>Shop by category</h2>
+        <p>Gear for every sport, every season and every level.</p>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="#shop"><h3>Men's &amp; Women's Activewear</h3><p>Breathable tops, tights and jackets that move with you.</p><span class="link">Shop activewear</span></a>
+        <a class="category-card" href="#shop"><h3>Performance Footwear</h3><p>Running, training and court shoes with real grip.</p><span class="link">Shop footwear</span></a>
+        <a class="category-card" href="#shop"><h3>Fitness &amp; Gym Gear</h3><p>Weights, bands, mats and bags for home or gym.</p><span class="link">Shop fitness gear</span></a>
+        <a class="category-card" href="#shop"><h3>Outdoor &amp; Team Sports Equipment</h3><p>Balls, kits and trail essentials for the whole squad.</p><span class="link">Shop equipment</span></a>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section search-results-section" id="searchResultsSection" aria-labelledby="searchResultsTitle" hidden>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="searchResultsTitle">Search results</h2>
+        <p id="searchResultsCount" aria-live="polite"></p>
+      </div>
+      <button class="btn btn-ghost" id="clearSearch" type="button">Clear search</button>
+    </div>
+    <div class="product-grid" id="searchGrid"></div>
+    <p class="no-results" id="searchEmpty" hidden>No products match your search. Try a different word, like &ldquo;shoes&rdquo;, &ldquo;yoga&rdquo; or &ldquo;football&rdquo;.</p>
+  </div>
+</section>
+
+  <section class="section products" id="shop">
+    <div class="container">
+      <div class="section-head">
+        <h2>Trending now</h2>
+        <p>The gear our customers are buying this week.</p>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-name="Velocity Pro Running Shoes" data-price="129">
+          <!-- Velocity Pro Running Shoes -->
+<div class="product-media">
+  <img src="C:\Users\DUGU TECH\OneDrive\Documents\domfits\Capture1.PNG" alt="Velocity Pro Running Shoes" width="800" height="250" loading="lazy">
+  <span class="badge">Best seller</span>
+</div>
+          <div class="product-body">
+            <h3>Velocity Pro Running Shoes</h3>
+            <div class="rating-row"><span class="stars" style="--r:4.5" role="img" aria-label="4.5 out of 5 stars">★★★★★</span>(212)</div>
+            <div class="price-row"><span class="price">$129.00</span><button class="btn btn-primary add-to-cart" type="button">Add to Cart</button></div>
+          </div>
+        </article>
+        <article class="product-card" data-name="AeroFit Training Tee" data-price="34">
+          <!-- AeroFit Training Tee (no badge) -->
+<div class="product-media">
+  <img src="C:\Users\DUGU TECH\OneDrive\Documents\domfits\Capture2.PNG" alt="AeroFit Training Tee" width="800" height="250" loading="lazy">
+</div>
+          <div class="product-body">
+            <h3>AeroFit Training Tee</h3>
+            <div class="rating-row"><span class="stars" style="--r:4" role="img" aria-label="4 out of 5 stars">★★★★★</span>(148)</div>
+            <div class="price-row"><span class="price">$34.00</span><button class="btn btn-primary add-to-cart" type="button">Add to Cart</button></div>
+          </div>
+        </article>
+        <article class="product-card" data-name="Iron Grip Adjustable Dumbbell Set" data-price="219">
+          <div class="product-media">
+  <img src="C:\Users\DUGU TECH\OneDrive\Documents\domfits\Capture3.PNG" alt="AeroFit Training Tee" width="800" height="250" loading="lazy">
+  <span class="badge">Popular</span>
+</div>
+          <div class="product-body">
+            <h3>Iron Grip Adjustable Dumbbells</h3>
+            <div class="rating-row"><span class="stars" style="--r:5" role="img" aria-label="5 out of 5 stars">★★★★★</span>(89)</div>
+            <div class="price-row"><span class="price">$219.00</span><button class="btn btn-primary add-to-cart" type="button">Add to Cart</button></div>
+          </div>
+        </article>
+        <article class="product-card" data-name="Pitch Master Match Football" data-price="42">
+          <div class="product-media">
+  <img src="C:\Users\DUGU TECH\OneDrive\Documents\domfits\Capture.PNG" alt="AeroFit Training Tee" width="800" height="250" loading="lazy">
+</div>
+          <div class="product-body">
+            <h3>Pitch Master Match Football</h3>
+            <div class="rating-row"><span class="stars" style="--r:4.5" role="img" aria-label="4.5 out of 5 stars">★★★★★</span>(301)</div>
+            <div class="price-row"><span class="price">$42.00</span><button class="btn btn-primary add-to-cart" type="button">Add to Cart</button></div>
+          </div>
+        </article>
+        <article class="product-card" data-name="Summit Trail Backpack 30L" data-price="78">
+          <div class="product-media">
+  <img src="C:\Users\DUGU TECH\OneDrive\Documents\domfits\Capture4.PNG" alt="AeroFit Training Tee" width="800" height="250" loading="lazy">
+</div>
+          <div class="product-body">
+            <h3>Summit Trail Backpack 30L</h3>
+            <div class="rating-row"><span class="stars" style="--r:4" role="img" aria-label="4 out of 5 stars">★★★★★</span>(76)</div>
+            <div class="price-row"><span class="price">$78.00</span><button class="btn btn-primary add-to-cart" type="button">Add to Cart</button></div>
+          </div>
+        </article>
+        <article class="product-card" data-name="FlexCore Yoga Mat" data-price="28">
+          <div class="product-media">
+  <img src="C:\Users\DUGU TECH\OneDrive\Documents\domfits\Capture5.PNG" alt="AeroFit Training Tee" width="800" height="250" loading="lazy">
+</div>
+          <div class="product-body">
+            <h3>FlexCore Yoga Mat</h3>
+            <div class="rating-row"><span class="stars" style="--r:4.5" role="img" aria-label="4.5 out of 5 stars">★★★★★</span>(164)</div>
+            <div class="price-row"><span class="price">$28.00</span><button class="btn btn-primary add-to-cart" type="button">Add to Cart</button></div>
+          </div>
+        </article>
+      </div>
+      <p class="no-results" id="noResults" hidden>No products match your search. Try a different word, like "shoes" or "mat".</p>
+    </div>
+  </section>
+ 
+  <section class="section" id="about" aria-labelledby="whyTitle">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="whyTitle">Why shop with us</h2>
+        <p>Real gear, fast delivery and people who answer.</p>
+      </div>
+      <div class="feature-grid">
+  <div class="feature">
+    <div class="feature-visual">
+      <div class="van-scene" aria-hidden="true">
+        <div class="van">
+          <div class="box cargo">
+            <i class="f f-front"></i><i class="f f-back"></i><i class="f f-left"></i>
+            <i class="f f-right"></i><i class="f f-top"></i><i class="f f-bottom"></i>
+          </div>
+          <div class="box cab">
+            <i class="f f-front"></i><i class="f f-back"></i><i class="f f-left"></i>
+            <i class="f f-right"></i><i class="f f-top"></i><i class="f f-bottom"></i>
+          </div>
+          <i class="wheel w1"></i><i class="wheel w2"></i><i class="wheel w3"></i><i class="wheel w4"></i>
+        </div>
+        <div class="van-shadow"></div>
+      </div>
+    </div>
+    <h3>Nation Wide Delivery</h3>
+    <p>Fast delivery on every order.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-visual"><div class="icon-3d">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+    </div></div>
+    <h3>100% Authentic Gear</h3>
+    <p>Sourced straight from brands and authorised suppliers.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-visual"><div class="icon-3d">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4.5h4.5"/></svg>
+    </div></div>
+    <h3>30-Day Hassle-Free Returns</h3>
+    <p>Wrong size or fit? Send it back within 30 days.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-visual"><div class="icon-3d">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.2-1.5 2-4 2"/></svg>
+    </div></div>
+    <h3>24/7 Customer Support</h3>
+    <p>Chat or email us any time, day or night.</p>
+  </div>
+</div>
+    </div>
+  </section>
+ 
+  <section class="section" style="padding-top:0" aria-labelledby="newsletterTitle">
+    <div class="container">
+      <div class="newsletter-box">
+        <div>
+          <h2 id="newsletterTitle">Get first dibs on deals</h2>
+          <p>Join our newsletter for exclusive discounts, early access to new drops and training tips. No spam, unsubscribe any time.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <label for="newsletterEmail" class="visually-hidden" style="position:absolute;left:-9999px">Email address</label>
+          <div class="field-row">
+            <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email address" autocomplete="email" aria-describedby="newsletterMsg">
+            <button class="btn" type="submit">Subscribe</button>
+          </div>
+          <p class="form-msg" id="newsletterMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+ 
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#home" class="brand"><span class="brand-mark" aria-hidden="true"><span>DS</span></span>Dom Simon Sports Store</a>
+        <p style="margin-top:1rem">Premium sports gear and apparel for athletes at every level.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="X (Twitter)">X</a>
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="YouTube">Yt</a>
+        </div>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Customer service</h3>
+        <ul>
+          <li><a href="#">Shipping information</a></li>
+          <li><a href="#">Returns &amp; exchanges</a></li>
+          <li><a href="#">Size guide</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:support@domsimonsports.com">support@domsimonsports.com</a></li>
+          <li><a href="tel:+2348037511097">+(234) 803 751 1097</a></li>
+          <li><a href="#">Live chat, 24/7</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Dom Simon Sports Store. All rights reserved.</p>
+  </div>
+</footer>
+ 
+<!-- Cart pop-up (slide-in drawer) -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="cart-header">
+    <h2 id="cartTitle">Your cart</h2>
+    <button class="icon-btn" id="cartClose" type="button" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <ul class="cart-items" id="cartItems"></ul>
+  <p class="cart-empty" id="cartEmpty">Your cart is empty. Add gear from the trending section and it will show up here.</p>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+    <button class="btn btn-primary" id="checkoutBtn" type="button">Checkout</button>
+    <button class="btn btn-ghost" id="clearCart" type="button">Clear cart</button>
+  </div>
+</aside>
+ 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+ 
+<script src="scrippt.js"></script>
+</body>
+</html>
+ 
