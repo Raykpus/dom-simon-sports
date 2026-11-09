@@ -300,3 +300,113 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1;margin:0;lette
 @keyframes vanSpin{from{transform:rotateX(-14deg) rotateY(-35deg)}to{transform:rotateX(-14deg) rotateY(325deg)}}
 @keyframes vanBob{0%,100%{translate:0 0}50%{translate:0 -4px}}
 @keyframes wheelSpin{to{transform:rotate(360deg)}}
+
+
+/* Mobile layout and lighter effects */
+@media (max-width: 820px) {
+  .site-header {
+    background: var(--bg);
+    backdrop-filter: none;
+  }
+
+  .container {
+    width: min(100% - 2rem, var(--max));
+  }
+
+  .hero-inner {
+    gap: 1.25rem;
+    padding: 2.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 10vw, 4.5rem);
+    animation: none;
+  }
+
+  .hero-art {
+    max-width: min(78vw, 300px);
+  }
+
+  .hero-art .tag {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-card:nth-child(n) {
+    grid-column: auto;
+    min-height: 190px;
+    padding: 1rem;
+  }
+
+  .category-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .category-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Keep cards readable and buttons easy to tap */
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .product-body {
+    padding: 0.85rem;
+  }
+
+  .product-body h3 {
+    font-size: 1.1rem;
+  }
+
+  .price-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .price-row .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* Reduce animation and 3D work on phones and tablets */
+  .hero h1,
+  .feature,
+  .icon-3d,
+  .van-scene,
+  .van,
+  .wheel::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .feature,
+  .feature h3,
+  .feature p,
+  .feature-visual,
+  .icon-3d {
+    transform: none !important;
+    rotate: none !important;
+    translate: none !important;
+  }
+
+  .reveal-ready .feature {
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .category-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
