@@ -302,7 +302,7 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1;margin:0;lette
 @keyframes wheelSpin{to{transform:rotate(360deg)}}
 
 
-/* Mobile layout and lighter effects */
+/* Mobile layout and lighter effects 
 @media (max-width: 820px) {
   .site-header {
     background: var(--bg);
@@ -350,7 +350,7 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1;margin:0;lette
     font-size: 0.9rem;
   }
 
-  /* Keep cards readable and buttons easy to tap */
+  /* Keep cards readable and buttons easy to tap 
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
@@ -374,7 +374,7 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1;margin:0;lette
     min-height: 44px;
   }
 
-  /* Reduce animation and 3D work on phones and tablets */
+  /* Reduce animation and 3D work on phones and tablets 
   .hero h1,
   .feature,
   .icon-3d,
@@ -409,4 +409,4 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1;margin:0;lette
   .hero-actions .btn {
     width: 100%;
   }
-}
+}*/
